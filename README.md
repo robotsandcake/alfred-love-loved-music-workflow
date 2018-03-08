@@ -22,10 +22,3 @@ When you first double-click and install the workflow you will see the following 
 The middle part of the workflow uses the following JavaScript, leveraging the __osascript__ tool in macOS AppleScript.
 
 <script src="https://gist.github.com/robotsandcake/2b61c73d3ff7e0de4b00e13a3fe9de92.js"></script>
-```
-
-
-Then shows a notification.
-
-![iTunes Loved Screenshot](https://cloud.githubusercontent.com/assets/2381/8754422/6f486980-2c91-11e5-8f6a-6f40f3d82e48.png)
-
