@@ -28,4 +28,14 @@ When you first double-click and install the workflow you will see the following 
 
 The middle part of the workflow uses the following JavaScript, leveraging the __osascript__ tool in macOS AppleScript.
 
+```javascript
+(function() {
+  var track = Application("iTunes").currentTrack();
+  var trackLoved = track.loved();
+  var notification = (trackLoved ? "UnLoved" : "Loved") + ": " + track.name();
+  track.loved = !trackLoved;
+  return notification;
+})()
+```
+
 <script src="https://gist.github.com/robotsandcake/2b61c73d3ff7e0de4b00e13a3fe9de92.js"></script>
