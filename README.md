@@ -1,6 +1,6 @@
 # Alfred Loved or Unloved Music Workflow #
 
-This Alfred workflow for macOS makes it easy for the user to set the currently playing song to "Loved" or "Unloved", which when coupled with an iTunes Smart Playlist means you can avoid the Barry Manilow and love the Orbital.
+This [Alfred.app](https://www.alfredapp.com/) [workflow](https://www.alfredapp.com/workflows/) for [macOS](https://www.apple.com/macos) makes it easy for the user to set the currently playing song to "Loved" or "Unloved", which when coupled with an [iTunes](https://www.apple.com/itunes/) [Smart Playlist](https://support.apple.com/kb/PH19487?locale=en_US) means you can avoid the [Barry Manilow](http://barrymanilow.com) and love the [Orbital](http://www.orbitalofficial.com/).
 
 # Download #
 
@@ -26,7 +26,9 @@ When you first double-click and install the workflow you will see the following 
 
 ![Alfred Preferences](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/images/alfred-love-loved-music-workflow-preferences.png?raw=true)
 
-The middle part of the workflow uses the following JavaScript, leveraging the __osascript__ tool in macOS AppleScript.
+The middle part of the workflow that does all of the work uses the following [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), leveraging the __osascript__ tool in [AppleScript](https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptX/AppleScriptX.html).
+
+### JavaScript/AppleScript Needed ###
 
 ```javascript
 (function() {
@@ -37,5 +39,3 @@ The middle part of the workflow uses the following JavaScript, leveraging the __
   return notification;
 })()
 ```
-
-<script src="https://gist.github.com/robotsandcake/2b61c73d3ff7e0de4b00e13a3fe9de92.js"></script>
