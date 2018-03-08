@@ -4,14 +4,21 @@ This Alfred workflow for macOS makes it easy for the user to set the currently p
 
 # Download #
 
+You can [download the workflow here](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/love-unloved-music.alfredworkflow?raw=true).
+
 ## Usage ##
 
 When a song is playing in iTunes invoke Alfred in your favourite way and simply type the words "Loved" or "Unloved" depending on your emotional attachment to that particular song.  Simples.
 
 You will then be shown one of the following notifications depending on your choice:
 
-![Loved Notification]()
-![UnLoved Notification]()
+### Loving Notification ###
+
+![Loved Notification](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/images/alfred-love-loved-music-workflow-loved-notification.png?raw=true)
+
+### Unloving Notification ###
+
+![UnLoved Notification](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/images/alfred-love-loved-music-workflow-unloved-notification.png?raw=true)
 
 ## Alfred Preferences ##
 
