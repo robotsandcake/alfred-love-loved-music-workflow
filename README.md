@@ -17,7 +17,7 @@ You will then be shown one of the following notifications depending on your choi
 
 When you first double-click and install the workflow you will see the following image:
 
-![Alfred Preferences]()
+![Alfred Preferences](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/images/alfred-love-loved-music-workflow-preferences.png?raw=true)
 
 The middle part of the workflow uses the following JavaScript, leveraging the __osascript__ tool in macOS AppleScript.
 
