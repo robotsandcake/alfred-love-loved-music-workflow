@@ -8,7 +8,7 @@ You can [download the workflow here](https://github.com/robotsandcake/alfred-lov
 
 ## Usage ##
 
-When a song is playing in iTunes invoke Alfred in your favourite way and simply type the words "Loved" or "Unloved" depending on your emotional attachment to that particular song.  Simples.
+When a song is playing in [iTunes](https://www.apple.com/itunes/) invoke [Alfred](https://www.alfredapp.com/) in your favourite way and simply type the words "Loved" or "Unloved" depending on your emotional attachment to that particular song.  Simples.
 
 You will then be shown one of the following notifications depending on your choice:
 
@@ -26,9 +26,10 @@ When you first double-click and install the workflow you will see the following 
 
 ![Alfred Preferences](https://github.com/robotsandcake/alfred-love-loved-music-workflow/blob/master/images/alfred-love-loved-music-workflow-preferences.png?raw=true)
 
+### JavaScript/AppleScript Needed ###
+
 The middle part of the workflow that does all of the work uses the following [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), leveraging the __osascript__ tool in [AppleScript](https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptX/AppleScriptX.html).
 
-### JavaScript/AppleScript Needed ###
 
 ```javascript
 (function() {
