@@ -110,10 +110,10 @@
 				<key>script</key>
 				<string>echo '
 (function() {
-  var track = Application("iTunes").currentTrack();
   var trackLoved = track.loved();
   var notification = (trackLoved ? "UnLoved" : "Loved") + ": " + track.name();
   track.loved = !trackLoved;
+  var track = Application('Music').currentTrack();
   return notification;
 })()' | osascript -l JavaScript
 </string>
