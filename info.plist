@@ -4,11 +4,9 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.robotsandcake.lovemusic</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>418A48CC-2D39-4B46-ADB7-09A84F1AFE4C</key>
+		<key>19BC2C25-A68D-4283-81F5-E995F1894955</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -21,11 +19,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>418A48CC-2D39-4B46-ADB7-09A84F1AFE4C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF4992C8-7551-4171-8DFF-707E0EBF41D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>45FB4B8A-864A-4310-9C25-D877F7EEDB75</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>19BC2C25-A68D-4283-81F5-E995F1894955</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DB9915BE-BCE5-43DA-A9BB-249EB9D6A4E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF4992C8-7551-4171-8DFF-707E0EBF41D9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -39,6 +63,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FF4992C8-7551-4171-8DFF-707E0EBF41D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -103,22 +140,41 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>ACTION</key>
+					<string>Loved</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>19BC2C25-A68D-4283-81F5-E995F1894955</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo '
+				<string>echo "
 (function() {
-  var track = Application("iTunes").currentTrack();
-  var trackLoved = track.loved();
-  var notification = (trackLoved ? "UnLoved" : "Loved") + ": " + track.name();
-  track.loved = !trackLoved;
+  var track = Application('Music').currentTrack();
+  var trackLoved = ('$ACTION' == 'Loved');
+  var notification = '$ACTION: ' + track.name();
+  track.loved = trackLoved;
   return notification;
-})()' | osascript -l JavaScript
-</string>
+})()" | osascript -l JavaScript</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -130,6 +186,47 @@
 			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>unlove</string>
+				<key>subtext</key>
+				<string>Marks the currently playing song on iTunes as unloved.</string>
+				<key>text</key>
+				<string>I UnLove the Current ITunes Song.</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DB9915BE-BCE5-43DA-A9BB-249EB9D6A4E7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>ACTION</key>
+					<string>UnLoved</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>FF4992C8-7551-4171-8DFF-707E0EBF41D9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -157,35 +254,58 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>19BC2C25-A68D-4283-81F5-E995F1894955</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
 		<key>418A48CC-2D39-4B46-ADB7-09A84F1AFE4C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<real>50</real>
 			<key>ypos</key>
-			<integer>160</integer>
+			<real>305</real>
 		</dict>
 		<key>45FB4B8A-864A-4310-9C25-D877F7EEDB75</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>50</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>25</real>
 		</dict>
 		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>680</integer>
+			<real>680</real>
 			<key>ypos</key>
-			<integer>70</integer>
+			<real>70</real>
+		</dict>
+		<key>DB9915BE-BCE5-43DA-A9BB-249EB9D6A4E7</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>360</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>90</integer>
+			<real>140</real>
+		</dict>
+		<key>FF4992C8-7551-4171-8DFF-707E0EBF41D9</key>
+		<dict>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>275</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>https://robotsandcake.org/</string>
 </dict>
